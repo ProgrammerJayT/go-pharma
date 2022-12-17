@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Shared\Dashboard;
+use App\Http\Livewire\Shared\Profile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Dashboard::class);
+Route::get('/', Dashboard::class)->name('dashboard');
 
 //Create fallback route to dashboard
 Route::fallback(function () {
     return redirect('/dashboard');
 });
+
+Route::get('/profile', Profile::class)->name('profile');
